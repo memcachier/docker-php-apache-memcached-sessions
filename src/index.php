@@ -1,7 +1,6 @@
 <?php
-session_start(); //initiate / open session
-$_SESSION['count'] = 0; // store something in the session
-session_write_close(); //now close it,
+session_start();
+$_SESSION['test'] = "Session test var D";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +12,9 @@ session_write_close(); //now close it,
 </head>
 <body>
   <h1>My PHP file</h1>
+  <div>Session test value: <?php echo $_SESSION['test']; ?></div>
   <ul>
     <li>MEMCACHIER_USERNAME: <?php echo getenv("MEMCACHIER_USERNAME"); ?></li>
-    <li>MEMCACHIER_PASSWORD: <?php echo getenv("MEMCACHIER_PASSWORD"); ?></li>
     <li>MEMCACHIER_SERVERS: <?php echo getenv("MEMCACHIER_SERVERS"); ?></li>
   </ul>
   <?php phpinfo(); ?>
